@@ -21,9 +21,9 @@ router.put('/updtodo', (req, res) => {
       Todos.updateOne(
           { _id: todoId},
           { $set: { title: title, starred: starred, done: done} },
-          function(err){
+          function(updTodo, err){
             if(err) 
-            res.json({success: false, msg: "not upd"});
+            res.json(updTodo);
           else
             res.json({success: true, msg: "upd successful"});
           })
