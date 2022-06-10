@@ -13,7 +13,7 @@ router.post( '/newtodo', (req, res) => {
         
         try {
             newTodo.save();
-            res.json({success: true, msg: "add successful"});
+            res.json(newTodo);
             
         }
         catch (err) {
