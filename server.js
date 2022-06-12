@@ -16,11 +16,13 @@ const getTodo = require('./routes/getTodo')
 const newTodo = require('./routes/newTodo')
 const delTodo = require('./routes/getTodo')
 const updTodo = require('./routes/getTodo')
+const sortTodo = require('./routes/getTodo')
 
 serv.use('/api', getTodo)
 serv.use('/api', newTodo) 
 serv.use('/api', delTodo)
 serv.use('/api', updTodo)
+serv.use('/api', sortTodo)
 
 serv.listen(port, ()=>{
     console.log("connected");

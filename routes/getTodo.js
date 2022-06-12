@@ -41,4 +41,15 @@ router.delete('/deltodo/:id', (req, res) => {
         });
   });
 
+
+  router.get('/sort/:field', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+        Todos.find({done: {$eq : req.params.field}}, (err, todos) => 
+        {
+          if(err) throw err;
+          return res.send(todos) 
+        });
+  });
+
   module.exports = router;
