@@ -42,6 +42,17 @@ router.delete('/deltodo/:id', (req, res) => {
   });
 
 
+  router.get('/sortstar/:field&:starred', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+        Todos.find({done: {$eq : req.params.field}, starred: {$eq : req.params.starred}}, (err, todos) => 
+        {
+          if(err) throw err;
+          return res.send(todos) 
+        });
+  });
+
+
   router.get('/sort/:field', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
@@ -52,4 +63,6 @@ router.delete('/deltodo/:id', (req, res) => {
         });
   });
 
+
+  
   module.exports = router;
