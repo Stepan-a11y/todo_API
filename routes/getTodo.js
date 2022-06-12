@@ -17,10 +17,11 @@ router.put('/updtodo', (req, res) => {
     let title = req.body.title;
     let starred = req.body.starred;
     let done = req.body.done;
+    let editMode = req.body.editMode;
 
       Todos.updateOne(
           { _id: todoId},
-          { $set: { title: title, starred: starred, done: done} },
+          { $set: { title: title, starred: starred, done: done, editMode: editMode} },
           function(err){
             if(err) 
             res.json({success: false, msg: "not upd"});

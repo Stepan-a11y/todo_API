@@ -14,6 +14,10 @@ const TodoShema = mongoose.Schema({
       type: Boolean,
       required: true
       },
+    editMode: {
+        type: Boolean,
+        required: true
+        },
     });
   
   const Todos = module.exports = mongoose.model('Todos', TodoShema);
