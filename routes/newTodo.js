@@ -8,7 +8,8 @@ router.post( '/newtodo', (req, res) => {
         let newTodo = new Todos({
             title: req.body.title,
             starred: req.body.starred,
-            done: req.body.done
+            done: req.body.done,
+            date: req.body.date
         });
         
         try {

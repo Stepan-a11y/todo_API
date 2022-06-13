@@ -18,6 +18,10 @@ const TodoShema = mongoose.Schema({
         type: Boolean,
         required: true
         },
+    date:{
+      type: String,
+      required: true
+    }
     });
   
   const Todos = module.exports = mongoose.model('Todos', TodoShema);
