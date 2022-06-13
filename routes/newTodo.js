@@ -9,6 +9,7 @@ router.post( '/newtodo', (req, res) => {
             title: req.body.title,
             starred: req.body.starred,
             done: req.body.done,
+            editMode: req.body.editMode,
             date: req.body.date
         });
         
